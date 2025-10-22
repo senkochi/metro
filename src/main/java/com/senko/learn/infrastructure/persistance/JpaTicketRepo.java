@@ -36,12 +36,13 @@ public class JpaTicketRepo implements TicketRepo {
     @Override
     public List<Ticket> findAll() {
         List<TicketEntity> entities = jpa.findAll();
-        return entities.stream().map(entity -> new Ticket(
-                entity.getTicketId(),
-                entity.getPrice(),
-                entity.getOriginalStation(),
-                entity.getDestinationStation(),
-                entity.getType())).toList();
+        return entities.stream().map(entity -> Ticket.builder()
+                .ticketId(entity.getTicketId())
+                .price(entity.getPrice())
+                .originalStation(entity.getOriginalStation())
+                .destinationStation(entity.getDestinationStation())
+                .type(entity.getType())
+                .build()).toList();
     }
 
     @Override

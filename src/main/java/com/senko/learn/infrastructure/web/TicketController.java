@@ -1,6 +1,6 @@
 package com.senko.learn.infrastructure.web;
 
-import com.senko.learn.application.ticketUsecase.CrudUseCases;
+import com.senko.learn.application.booking.CrudUseCases;
 import com.senko.learn.domain.booking.dto.CreateTicketDTO;
 import com.senko.learn.domain.booking.Ticket;
 import com.senko.learn.domain.repo.TicketRepo;

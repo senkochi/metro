@@ -19,6 +19,20 @@ public class Ticket {
     private TicketStatus status;
 
     public void cancel(){
+        if(status == TicketStatus.CANCELLED){
+            throw new IllegalStateException("Ticket cancelled already");
+        }
+        this.status = TicketStatus.CANCELLED;
+    }
 
+    public void confirm(){
+        if(status != TicketStatus.ACTIVE){
+            throw new IllegalStateException("Ticket no longer usable");
+        }
+        this.status = TicketStatus.USED;
+    }
+
+    TicketStatus getStatus(){
+        return this.status;
     }
 }

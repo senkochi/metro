@@ -1,4 +1,4 @@
-package com.senko.learn.application.ticketUsecase;
+package com.senko.learn.application.booking;
 
 import com.senko.learn.domain.booking.dto.CreateTicketDTO;
 import com.senko.learn.domain.booking.Ticket;

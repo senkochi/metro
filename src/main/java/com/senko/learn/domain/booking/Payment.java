@@ -11,4 +11,10 @@ public class Payment {
     private int paymentId;
     private long amount;
     private PaymentStatus status;
+
+    public void complete(){
+        this.status = PaymentStatus.COMPLETED;
+    }
 }
+
+
